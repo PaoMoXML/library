@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+
+.my{
+	box-shadow:inset 0 2px 3px -1px rgba(0,0,0,.25);
+	background-color:#333;
+	width:90%;
+	padding:20px;
+	margin:0;
+}
+.search-header{
+	box-shadow:0 1px 3px rgba(0,0,0,.25);
+	margin-bottom:10px;
+}
+
+.beatmapsets-search__input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px 55px 10px 10px;
+    font-style: italic;
+    font-weight: lighter;
+    position: relative
+}
+
+.beatmapsets-search__input-container {
+    color: #f6a;
+    font-size: 20px;
+    margin: 200px -10px 20px;
+}
+
+.osu-layout__section--full{
+	flex: 1 0 auto;
+}
+.osu-layout--body {
+    background-color: transparent;
+}
+.osu-layout {
+    display: flex;
+    flex-direction: column;
+    transition: opacity .2s ease-in-out,-webkit-filter .2s ease-in-out;
+    transition: filter .2s ease-in-out,opacity .2s ease-in-out;
+    transition: filter .2s ease-in-out,opacity .2s ease-in-out,-webkit-filter .2s ease-in-out;
+}
+.osu-page {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex: none;
+    width: 100%;
+    max-width: 1000px;
+    }
+    
+.osu-page--beatmapsets-search-header {
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    margin-bottom: 10px;
+    position: relative
+}
+
+.beatmapsets-search {
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    padding: 10px 50px;
+    background: #000;
+    font-size: 13px;
+    position: relative
+}
+
+.beatmapsets-search__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .3;
+    background-image:url(/ssm3/images/746.jpg);
+}
+.color-h1{
+	color: #f6a;
+    font-size: 40px;
+    margin: 100px -10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+	.sidebar{
+	     box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	    background-color:#333;
+		position: absolute;
+		width: 200px;
+		height: 100%;
+		padding: 0px;
+		margin: 0px;
+        background:url(/ssm3/images/page-222.png);
+	}
+		.sidebar-face{
+			position: relative;
+			height: 60px;
+			padding: 30px auto;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+			.sidebar-face > h1{
+				font-size: 30px;
+				color: white;
+				margin: 0;
+			}
+		.sidebar-main{
+		
+			position: relative;
+			height: calc(100% - 60px);
+			width: 100%;
+			padding: 0;
+		}
+			.sidebar-main{
+				position: relative;
+				height: calc(100% - 60px);
+				width: 100%;
+				padding: 0;
+			}
+				.sidebar-main ul{
+					list-style: none;
+					height: auto;
+					padding: 0;
+					margin: 0;
+				}
+				.sidebar-main li{
+					height: 30px;
+					line-height: 30px;
+					width: 100%;
+					text-align: center;
+					box-sizing: border-box;
+					border-left: 5px solid rgba(240,255,255,0);
+					transition: background-color 0.5s, border-left 0.5s;
+				}
+					.sidebar-main a{
+						font-size: 20px;
+						text-decoration: none;
+						margin: 0;
+					}
+					.sidebar-main a:visited{
+						color: white;
+					}
+					.sidebar-main a:hover{
+						color: white;
+					}
+						.sidebar-main a:hover li{
+							background-color: rgba(0,0,0,0.4);
+							border-left: 5px solid rgba(240,255,255,1);
+						}
+						.sidebar-main li.active{
+							background-color: rgba(0,0,0,0.4);
+							border-left: 5px solid rgba(240,255,255,1);
+
+						}
