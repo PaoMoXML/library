@@ -5,70 +5,70 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/ssm3/css/osuStyle.css"/>
 </head>
-<style>
-.my{
-font-family:Microsoft YaHei;
-font-size: 20px;
-}
-.mycenter{
-border:0;
-border-top:1px solid #000;
-border-bottom:1px solid #000;
-background-color:#487eb0;
-background:url(123/ssm3/images/background.png);
-}
+<body clas = "osu-layout--body osu-layout" style = "background:url(/ssm3/images/page-dark.png)">
 
-</style>
+	<div class="osu-layout__section--full">
+	<div class = "osu-page osu-page--beatmapsets-search-header ">
+	  <form>
+	  <div class = "beatmapsets-search">
+     <div class = "beatmapsets-search__background" ></div>
 
-<body style = "background-color:#487eb0;">
+		<h1 class = "color-h1">学生信息</h1>
 
+<label>学生姓名：</label>
+${stuname}
+<label>性别：</label>
+${sex}
+<label>身份证号码：</label>
+${idnumber}
+<label>学生电话：</label>
+ ${phone}
+<label>注册时间：</label>
+${regtime}
+<label>到期时间1111：</label>
+${vailtime}
+<label>借书数量：</label>
+${bbnumber}
+<label>是否有效：</label>
+${stustate}
+		<a class="beatmapsets-search__input" style = "font-size:18px; color:#fff" href="${pageContext.request.contextPath}">返回首页</a>
+		</div>
+	  </form>
+	</div>
+	</div>
+	
+	
+	<div class="sidebar">
+		<div class="sidebar-face">
+			<h1>导航</h1>
+		</div>
+		<div class="sidebar-main">
+			<ul>
+				<a href="${pageContext.request.contextPath}">
+					<li class="active">
+						主页
+					</li>
+				</a>
+				<a href="${pageContext.request.contextPath}/stu//getInfoP">
+					<li>
+						学生信息查询
+					</li>
+				</a>
+				<a href="">
+					<li>
+						2
+					</li>
+				</a>
+				<a href="">
+					<li>
+						3
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
 
-
-
-
-
-
-
-<center class = "mycenter">
-<h3 style = "font-size:24px">学生信息显示</h3>
-<table class= "my" >
-           <tr>
-               <td><label>学生姓名：</label></td>
-               <td>${stuname}</td>
-           </tr>
-           <tr>
-               <td><label>性别：</label></td>
-               <td>${sex}</td>
-           </tr>
-           <tr>
-               <td><label>身份证号码：</label></td>
-               <td>${idnumber}</td>
-           </tr>
-           <tr>
-               <td><label>学生电话：</label></td>
-               <td>${phone}</td>
-           </tr>
-            <tr>
-               <td><label>注册时间：</label></td>
-               <td>${regtime}</td>
-           </tr>
-            <tr>
-               <td><label>到期时间：</label></td>
-               <td>${vailtime}</td>
-           </tr>
-            <tr>
-               <td><label>借书数量：</label></td>
-               <td>${bbnumber}</td>
-           </tr>
-            <tr>
-               <td><label>是否有效：</label></td>
-               <td>${stustate}</td>
-           </tr>
-       </table>
-       <br>
-    <a style = "font-size:18px" href="${pageContext.request.contextPath}">返回首页</a>
-       </center>
-       
 </body>
 </html>

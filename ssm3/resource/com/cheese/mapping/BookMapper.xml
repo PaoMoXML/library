@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cheese.dao.BookMapper">
+  <resultMap id="BaseResultMap" type="com.cheese.pojo.Book">
+    <id column="bookid" jdbcType="INTEGER" property="bookid" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="kind" jdbcType="VARCHAR" property="kind" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="cbs" jdbcType="VARCHAR" property="cbs" />
+    <result column="bookstore" jdbcType="VARCHAR" property="bookstore" />
+    <result column="number" jdbcType="SMALLINT" property="number" />
+    <result column="allnumber" jdbcType="SMALLINT" property="allnumber" />
+    <result column="existtime" jdbcType="TIMESTAMP" property="existtime" />
+    <result column="czy" jdbcType="VARCHAR" property="czy" />
+    <result column="introduce" jdbcType="VARCHAR" property="introduce" />
+    <result column="borrowtimes" jdbcType="SMALLINT" property="borrowtimes" />
+    <result column="iswithdraw" jdbcType="VARCHAR" property="iswithdraw" />
+    <result column="bookstate" jdbcType="VARCHAR" property="bookstate" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    bookid, title, kind, author, cbs, bookstore, number, allnumber, existtime, czy, introduce, 
+    borrowtimes, iswithdraw, bookstate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from book
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from book
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cheese.pojo.Book">
+    insert into book (bookid, title, kind, 
+      author, cbs, bookstore, 
+      number, allnumber, existtime, 
+      czy, introduce, borrowtimes, 
+      iswithdraw, bookstate)
+    values (#{bookid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, 
+      #{author,jdbcType=VARCHAR}, #{cbs,jdbcType=VARCHAR}, #{bookstore,jdbcType=VARCHAR}, 
+      #{number,jdbcType=SMALLINT}, #{allnumber,jdbcType=SMALLINT}, #{existtime,jdbcType=TIMESTAMP}, 
+      #{czy,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, #{borrowtimes,jdbcType=SMALLINT}, 
+      #{iswithdraw,jdbcType=VARCHAR}, #{bookstate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cheese.pojo.Book">
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        bookid,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="kind != null">
+        kind,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="cbs != null">
+        cbs,
+      </if>
+      <if test="bookstore != null">
+        bookstore,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="allnumber != null">
+        allnumber,
+      </if>
+      <if test="existtime != null">
+        existtime,
+      </if>
+      <if test="czy != null">
+        czy,
+      </if>
+      <if test="introduce != null">
+        introduce,
+      </if>
+      <if test="borrowtimes != null">
+        borrowtimes,
+      </if>
+      <if test="iswithdraw != null">
+        iswithdraw,
+      </if>
+      <if test="bookstate != null">
+        bookstate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookid != null">
+        #{bookid,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="cbs != null">
+        #{cbs,jdbcType=VARCHAR},
+      </if>
+      <if test="bookstore != null">
+        #{bookstore,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=SMALLINT},
+      </if>
+      <if test="allnumber != null">
+        #{allnumber,jdbcType=SMALLINT},
+      </if>
+      <if test="existtime != null">
+        #{existtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="czy != null">
+        #{czy,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowtimes != null">
+        #{borrowtimes,jdbcType=SMALLINT},
+      </if>
+      <if test="iswithdraw != null">
+        #{iswithdraw,jdbcType=VARCHAR},
+      </if>
+      <if test="bookstate != null">
+        #{bookstate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.cheese.pojo.Book">
+    update book
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="kind != null">
+        kind = #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="cbs != null">
+        cbs = #{cbs,jdbcType=VARCHAR},
+      </if>
+      <if test="bookstore != null">
+        bookstore = #{bookstore,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=SMALLINT},
+      </if>
+      <if test="allnumber != null">
+        allnumber = #{allnumber,jdbcType=SMALLINT},
+      </if>
+      <if test="existtime != null">
+        existtime = #{existtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="czy != null">
+        czy = #{czy,jdbcType=VARCHAR},
+      </if>
+      <if test="introduce != null">
+        introduce = #{introduce,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowtimes != null">
+        borrowtimes = #{borrowtimes,jdbcType=SMALLINT},
+      </if>
+      <if test="iswithdraw != null">
+        iswithdraw = #{iswithdraw,jdbcType=VARCHAR},
+      </if>
+      <if test="bookstate != null">
+        bookstate = #{bookstate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cheese.pojo.Book">
+    update book
+    set title = #{title,jdbcType=VARCHAR},
+      kind = #{kind,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      cbs = #{cbs,jdbcType=VARCHAR},
+      bookstore = #{bookstore,jdbcType=VARCHAR},
+      number = #{number,jdbcType=SMALLINT},
+      allnumber = #{allnumber,jdbcType=SMALLINT},
+      existtime = #{existtime,jdbcType=TIMESTAMP},
+      czy = #{czy,jdbcType=VARCHAR},
+      introduce = #{introduce,jdbcType=VARCHAR},
+      borrowtimes = #{borrowtimes,jdbcType=SMALLINT},
+      iswithdraw = #{iswithdraw,jdbcType=VARCHAR},
+      bookstate = #{bookstate,jdbcType=VARCHAR}
+    where bookid = #{bookid,jdbcType=INTEGER}
+  </update>
+  
+  
+  <select id="selectBook" parameterType="com.cheese.pojo.Book" resultMap="BaseResultMap">
+    select  * from book
+    <where>
+    	<if test = "title != null and title != ''">
+    		title = #{title}
+    	</if>
+    	<if test = "kind != null and kind != ''">
+   	 		and kind = #{kind}
+    	</if>
+    </where>
+  </select>
+  
+</mapper>

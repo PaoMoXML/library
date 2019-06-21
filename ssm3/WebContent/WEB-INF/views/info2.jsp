@@ -7,12 +7,16 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/ssm3/css/osuStyle.css"/>
 </head>
-<body>
+<body class = "osu-layout--body osu-layout"style = "background:url(/ssm3/images/page-dark.png)">
 
-	<div class="">
-	  <form class="">
-		<h1>学生信息</h1>
-		<table class= "txtb" >
+	<div class="osu-layout__section--full">
+	<div class = "osu-page osu-page--beatmapsets-search-header ">
+	  <form>
+	  <div class = "beatmapsets-search" style:>
+     <div class = "beatmapsets-search__background" ></div>
+
+		<h1 class = "color-h1">学生信息</h1>
+		<table class = "color-h2 my">
            <tr>
                <td><label>学生姓名：</label></td>
                <td>${stuname}</td>
@@ -46,8 +50,10 @@
                <td>${stustate}</td>
            </tr>
        </table>
-		<a class="signup-btn" style = "font-size:18px" href="${pageContext.request.contextPath}">返回首页</a>
+		<a class="beatmapsets-search__input" style = "font-size:18px; color:#fff" href="${pageContext.request.contextPath}">返回首页</a>
+		</div>
 	  </form>
+	</div>
 	</div>
 	
 	
@@ -62,14 +68,14 @@
 						主页
 					</li>
 				</a>
-				<a href="${pageContext.request.contextPath}/stu//getInfoP">
+				<a href="${pageContext.request.contextPath}/stu/getInfoP">
 					<li>
 						学生信息查询
 					</li>
 				</a>
-				<a href="">
+				<a href="${pageContext.request.contextPath}/book/getBInfoP">
 					<li>
-						2
+						图书信息查询
 					</li>
 				</a>
 				<a href="">

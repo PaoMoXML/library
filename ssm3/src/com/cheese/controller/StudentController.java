@@ -1,6 +1,10 @@
 package com.cheese.controller;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,11 +33,17 @@ public class StudentController {
 	
 	
 	@RequestMapping(value = "/stuInfo",method = RequestMethod.GET)
-	public String selectByPrimaryKey(Integer stuid,HttpServletRequest request){
+	public String selectByPrimaryKey(Integer stuid,HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
+		Student student = new Student();
+		student = studentService.selectByPrimaryKey(stuid);
 		if(stuid == null||stuid.equals("")) {
 			return"getInfoP";
 		}
-		Student student = studentService.selectByPrimaryKey(stuid);
+		else if(student==null) {
+			request.setAttribute("searchError", "输入学生证错误或者学生不存在！！");
+			request.getRequestDispatcher("getInfoP").forward(request, response);
+		}
+		else {
 		request.setAttribute("stuname",student.getStuname());
 		request.setAttribute("sex",student.getSex());
 		request.setAttribute("idnumber",student.getIdnumber());
@@ -43,6 +53,8 @@ public class StudentController {
 		request.setAttribute("bbnumber", student.getBbnumber());
 		request.setAttribute("stustate", student.getStustate());
 		return "info2";	
+		}
+		return "getInfoP";
 		
 	}
 	
