@@ -55,37 +55,22 @@ window.location='getInfoP' ;                            // 跳转到xx页面
 
 	<div class="osu-layout__section--full">
 		<div class="osu-page osu-page--beatmapsets-search-header ">
-			<form method="get"
-				action="${pageContext.request.contextPath}/book/bookInfo">
+			<form method="post"
+				action="${pageContext.request.contextPath}/book/updateBookpic"
+				enctype="multipart/form-data">
 				<div class="beatmapsets-search">
 					<div class="beatmapsets-search__background"></div>
-					<h1 class="color-h1">图书信息查询</h1>
+					<h1 class="color-h1">图书封面上传</h1>
 					<div class="beatmapsets-search__input-container">
 						<input type="text" name="title"
 							class="beatmapsets-search__input beatmapsets-search__input-container"
 							placeholder="输入书名..." style="padding: 10px 15px 10px 10px;">
+						<input type="file" name="bookpic"
+							class="beatmapsets-search__input beatmapsets-search__input-container"
+							style="padding: 10px 15px 10px 10px;">
+
 					</div>
-					<div class="beatmapsets-search-filter">
-						<span class="beatmapsets-search-filter__header">类型</span>
-						<div class="beatmapsets-search-filter__items">
-							<a
-								href="${pageContext.request.contextPath}/book/bookInfo?kind=课本教材"
-								class="beatmapsets-search-filter__item" data-filter-value="kind">课本教材</a>
-							<a
-								href="${pageContext.request.contextPath}/book/bookInfo?kind=课本教材"
-								class="beatmapsets-search-filter__item" data-filter-value="kind">课本教材</a>
-							<a
-								href="${pageContext.request.contextPath}/book/bookInfo?kind=课本教材"
-								class="beatmapsets-search-filter__item" data-filter-value="kind">课本教材</a>
-							<a
-								href="${pageContext.request.contextPath}/book/bookInfo?kind=课本教材"
-								class="beatmapsets-search-filter__item" data-filter-value="kind">课本教材</a>
-							<a
-								href="${pageContext.request.contextPath}/book/bookInfo?kind=课本教材"
-								class="beatmapsets-search-filter__item" data-filter-value="kind">课本教材</a>
-						</div>
-					</div>
-					<br> <br> <input type="submit" value="查询"
+					<br> <br> <input type="submit" value="上传"
 						class="beatmapsets-search__input" style="background-color: #fff">
 					<br> <br>
 					<div class="user-home__buttons">
