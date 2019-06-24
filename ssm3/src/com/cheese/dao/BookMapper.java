@@ -1,6 +1,7 @@
 package com.cheese.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.cheese.pojo.Book;
 
@@ -19,4 +20,6 @@ public interface BookMapper {
     int updateByPrimaryKey(Book record);
     
     public List<Book> selectBook(Book record);
+    
+    public int updatepic (Map<String, Object> map);
 }

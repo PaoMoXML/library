@@ -31,7 +31,7 @@
 					<div class="beatmapsets-search__background"
 						style="width: 100%; height: 100%;"></div>
 
-					<h1 class="color-h1">学生信息</h1>
+					<h1 class="color-h1">图书信息</h1>
 					<table class="my" id="h3">
 						<tr>
 							<td><label>书名：&nbsp;</label></td>
@@ -62,7 +62,28 @@
 								<td>${book.borrowtimes}</td>
 								<td>${book.iswithdraw}</td>
 								<td>${book.bookstate}</td>
-								<td></td>
+								<td>
+								<div class="beatmapsets-search" style="width: 50%; height: 50%;">
+								<div class = "beatmapsets__content">
+								<div style="height: 50px; padding-top: 0px; box-sizing: border-box;">
+								<div class="beatmapsets__items">
+								<div class= "beatmapsets__items-row">
+								<div class= "beatmapsets__item">
+								<div class= "beatmapset-panel">
+								<div class= "beatmapset-panel__panel">
+								<img alt="" src="/ssm3/bookimg/${book.bookpath}" class = "beatmapset-panel__image">
+								
+								<div class = "beatmapset-panel__image-overlay"></div>	
+								</div>
+								<div class = "beatmapset-panel__shadow"></div>
+								</div>				
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								</div>
+								
 							</tr>
 						</c:forEach>
 					</table>
@@ -92,8 +113,8 @@
 				<a href="${pageContext.request.contextPath}/book/getBInfoP">
 					<li>图书信息查询</li>
 				</a>
-				<a href="">
-					<li>3</li>
+				<a href="${pageContext.request.contextPath}/book/getBookpic">
+					<li>上传图书封面</li>
 				</a>
 			</ul>
 		</div>

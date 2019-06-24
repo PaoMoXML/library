@@ -2,8 +2,9 @@ package com.cheese.pojo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Book {
-	
     private Integer bookid;
 
     private String title;
@@ -31,6 +32,18 @@ public class Book {
     private String iswithdraw;
 
     private String bookstate;
+
+    private String bookpath;
+    
+    private MultipartFile bookpic;
+
+	public MultipartFile getBookpic() {
+		return bookpic;
+	}
+
+	public void setBookpic(MultipartFile bookpic) {
+		this.bookpic = bookpic;
+	}
 
 	public Integer getBookid() {
 		return bookid;
@@ -142,6 +155,14 @@ public class Book {
 
 	public void setBookstate(String bookstate) {
 		this.bookstate = bookstate;
+	}
+
+	public String getBookpath() {
+		return bookpath;
+	}
+
+	public void setBookpath(String bookpath) {
+		this.bookpath = bookpath;
 	}
 
 }

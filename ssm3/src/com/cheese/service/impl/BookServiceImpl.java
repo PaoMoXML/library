@@ -1,6 +1,7 @@
 package com.cheese.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,15 @@ public class BookServiceImpl implements BookService{
 	public  List<Book> booklist(Book record){
 		return bookMapper.selectBook(record);
 	}
+
+	@Override
+	public int updateBookpic(Map<String, Object> map) {
+		return bookMapper.updatepic(map);
+		
+	}
+	
+	
+	
 	
 
 }

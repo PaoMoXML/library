@@ -16,6 +16,7 @@
     <result column="borrowtimes" jdbcType="SMALLINT" property="borrowtimes" />
     <result column="iswithdraw" jdbcType="VARCHAR" property="iswithdraw" />
     <result column="bookstate" jdbcType="VARCHAR" property="bookstate" />
+     <result column="bookpath" jdbcType="VARCHAR" property="bookpath" />
   </resultMap>
   
   <sql id="Base_Column_List">
@@ -211,5 +212,9 @@
     	</if>
     </where>
   </select>
+  
+  <update id="updatepic" parameterType="com.cheese.pojo.Book">
+  update book set bookpath = #{bookpath} where title = #{title}
+  </update>
   
 </mapper>

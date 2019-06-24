@@ -115,8 +115,8 @@ window.location='getInfoP' ;                            // 跳转到xx页面
 				<a href="${pageContext.request.contextPath}/book/getBInfoP">
 					<li>图书信息查询</li>
 				</a>
-				<a href="">
-					<li>3</li>
+				<a href="${pageContext.request.contextPath}/book/getBookpic">
+					<li>上传图书封面</li>
 				</a>
 			</ul>
 		</div>
