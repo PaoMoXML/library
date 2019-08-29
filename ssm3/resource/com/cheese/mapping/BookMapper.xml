@@ -16,7 +16,7 @@
     <result column="borrowtimes" jdbcType="SMALLINT" property="borrowtimes" />
     <result column="iswithdraw" jdbcType="VARCHAR" property="iswithdraw" />
     <result column="bookstate" jdbcType="VARCHAR" property="bookstate" />
-     <result column="bookpath" jdbcType="VARCHAR" property="bookpath" />
+    <result column="bookpath" jdbcType="VARCHAR" property="bookpath" />
   </resultMap>
   
   <sql id="Base_Column_List">
@@ -213,8 +213,32 @@
     </where>
   </select>
   
+   <select id="selectBook1" parameterType="com.cheese.pojo.Book" resultMap="BaseResultMap">
+    select  * from book
+    <where>
+    	<if test = "title != null and title != ''">
+    	and title like concat(concat('%',#{title},'%'))
+    	</if>
+    </where>
+  </select>
+  
   <update id="updatepic" parameterType="com.cheese.pojo.Book">
   update book set bookpath = #{bookpath} where title = #{title}
   </update>
+  
+  
+  <select id="searchList" resultType="com.cheese.pojo.Book">
+        select * from book order by booid
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+  </select>
+
+    
+    <select id="searchTotal" resultType="int">
+        select count(*) from book
+    </select>
+
+  
   
 </mapper>

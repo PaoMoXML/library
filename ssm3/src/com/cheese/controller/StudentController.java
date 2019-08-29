@@ -40,7 +40,7 @@ public class StudentController {
 			return"getInfoP";
 		}
 		else if(student==null) {
-			request.setAttribute("searchError", "ÊäÈëÑ§ÉúÖ¤´íÎó»òÕßÑ§Éú²»´æÔÚ£¡£¡");
+			request.setAttribute("searchError", "è¯·è¾“å…¥æ­£ç¡®çš„å­¦å·ï¼");
 			request.getRequestDispatcher("getInfoP").forward(request, response);
 		}
 		else {
@@ -54,6 +54,7 @@ public class StudentController {
 		request.setAttribute("stustate", student.getStustate());
 		return "info2";	
 		}
+		
 		return "getInfoP";
 		
 	}

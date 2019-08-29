@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.cheese.pojo.Book;
+import com.cheese.pojo.Page;
 
 public interface BookMapper {
 
@@ -21,5 +22,13 @@ public interface BookMapper {
     
     public List<Book> selectBook(Book record);
     
+    public List<Book> selectBook1(Book record);
+    
     public int updatepic (Map<String, Object> map);
+    
+    public List<Book> searchList(Page page);
+    
+    public int searchTotal();
+    
+    
 }

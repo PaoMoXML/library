@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cheese.pojo.Book;
+import com.cheese.pojo.Page;
 import com.cheese.service.BookService;
 
 @Controller
@@ -30,7 +31,13 @@ public class BookController {
 		List<Book> book =  bookService.booklist(record);
 		model.addAttribute("record",book);
 		return "bookInfo2";
-		
+	}
+	
+	@RequestMapping(value = "/bookInfo1",method = RequestMethod.GET)
+	public String booklist1(Book record,Model model){
+		List<Book> book =  bookService.booklist1(record);
+		model.addAttribute("record",book);
+		return "bookInfo2";
 	}
 	
 	@RequestMapping(value = "/getBInfoP")
@@ -71,6 +78,16 @@ public class BookController {
 			String url = "redirect:http:/ssm3/book/bookInfo?title=" + URLEncoder.encode(abc,"UTF-8");
 			return url;
 		}
+	
+	 @RequestMapping("bookList")
+	 	public String list(Model model,Page page) {
+			 List<Book> bl = bookService.searchList(page);
+			 int total = bookService.searchTotal();
+			 page.setTotal(total);
+			 model.addAttribute("bl",bl);
+			 model.addAttribute("page",page);
+			 return "";
+	 }
 	
 	
 

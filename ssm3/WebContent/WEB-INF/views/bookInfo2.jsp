@@ -9,7 +9,7 @@
 <style type="text/css">
 #h3 {
 	color: #f6a;
-	font-size: 20px;
+	fo	nt-size: 20px;
 	margin: 100px -10px 20px;
 	width: 100%;
 }
@@ -30,7 +30,6 @@
 				<div class="beatmapsets-search" style="width: 150%; height: 150%;">
 					<div class="beatmapsets-search__background"
 						style="width: 100%; height: 100%;"></div>
-
 					<h1 class="color-h1">图书信息</h1>
 					<table class="my" id="h3">
 						<tr>
